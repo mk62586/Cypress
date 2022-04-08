@@ -1,0 +1,8 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "baseUrl": "http://automationpractice.com/index.php?controller=authentication&back=my-account",
+  "email" : "Jonhty123@gmail.com",
+  "password" :"haider1234"
+}
+
+
