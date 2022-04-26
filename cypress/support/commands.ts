@@ -6,5 +6,6 @@ Cypress.Commands.add('login',()=>{
         cy.get('#SubmitLogin').click()
     })
   })
+
       
  

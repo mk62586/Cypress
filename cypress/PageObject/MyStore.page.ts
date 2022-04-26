@@ -25,78 +25,86 @@ const alias = '#alias'
 const submit = '#submitAccount'
 
  class MyStore {
-      create_Account(value : any){
-                return  cy.get('[id="email_create"]').type(value),
-                cy.get("#SubmitCreate").click()
-      }
+      create_Account(){
+                  return  cy.get('[id="email_create"]')
+       }
+       submitcreate(){
+                 return  cy.get("#SubmitCreate")
+       }
       title(){
-                 return  cy.get(title,{timeout:20000}).contains('Mr').click()
+                 return  cy.get(title).contains('Mr')
+       }
+        name(){
+                return  cy.get(firstName)
+        }
+        lastName(){
+                return  cy.get(lastName)
+        }
+        email(){
+                 return  cy.get(emailpath)
+       }
+        password(){
+                  return  cy.get(password)
+       }
+        months(){
+                  return cy.get(months)
+        }
+        years(){
+                 return cy.get(years)
+        }
+        days(){
+                  return cy.get(days)
+        }
+      company(){
+                 return  cy.get(company)
      }
-      name(value1:any){
-                  return  cy.get(firstName).type(value1)
-      }
-  lastName(lastN:any){
-                       cy.get(lastName).type(lastN)
-      }
-      email(){
-                 return  cy.get(emailpath).click()
-      }
-      password(password1 :any){
-                  return  cy.get(password).type(password1)
-      }
-      DOB(){
-                  return cy.get(months).select('April'),
-                   cy.get(years).select('1998'),
-                   cy.get(days).select('5')
-      }
-      company(comp:any){
-                 return  cy.get(company).type(comp)
+      address(){
+                 return  cy.get(addrss)
      }
-      address(adr:any){
-                 return  cy.get(addrss).type(adr)
+      address2(){
+                  return cy.get(address2)
      }
-      address2(adr1:any){
-                  return cy.get(address2).type(adr1)
+      city(){
+                  return   cy.get(city)
      }
-      city(city1:any){
-                  return   cy.get(city).type(city1)
+     state(){
+                  return  cy.get(state)
      }
-     state(Value:any){
-                  return  cy.get(state).select(Value)
+      postcode(){
+                   return  cy.get(postcode)
      }
-      postcode(Postcode:any){
-                   return  cy.get(postcode).type(Postcode)
+      other(){
+                   return  cy.get(other)
      }
-      other(Other:any){
-                   return  cy.get(other).type(Other)
+      phone(){
+                   return  cy.get(phone)
      }
-      phone(Phone:any){
-                   return  cy.get(phone).type(Phone)
+      phone1(){                
+                   return  cy.get(phone_m)
      }
-      phone1(Phone1:any){                
-                   return  cy.get(phone_m).type(Phone1)
-     }
-      alias(Alias:any){
-                   return  cy.get(alias).type(Alias)
+      alias(){
+                   return  cy.get(alias)
       }
       submit(){
-                   return  cy.get(submit).click()
+                   return  cy.get(submit)
       }
       clickSubmit(){
-                   return cy.get(submit,{timeout:7000}).click(),
+                   return cy.get(submit,{timeout:7000})
+      }
+      alert_Danger(){
                    cy.get("[class='alert alert-danger']>p").contains("There are 8 errors")
      }
      userAccount(){
-    return  cy.get(".header_user_info").contains("Avi Gupta")
+                   return  cy.get(".header_user_info").contains("Avi Gupta")
      }
      failedFirstName(){
-           return cy.get("ol>li").contains("firstname is required.")
+                   return cy.get("ol>li").contains("firstname is required.")
      }
      filledRegistration(){
-      return cy.get("ol>li").contains("passwd  is required.")
+                   return cy.get("ol>li").contains("passwd  is required.")
      }
      withoutPass_Ph_St_Name(){
-           return cy.get("ol>")
+                   return cy.get("ol>")
      }
   }
     export default MyStore

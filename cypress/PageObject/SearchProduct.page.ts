@@ -7,16 +7,15 @@ const productContainer = "[class='product-container']"
 const short = "Faded Short Sleeve T-shirts"
 const timeout :any ={timeot:5000}
 
-
 class Search{
     menu(){
-        return cy.get(menu).contains('Women').click()
+        return cy.get(menu).contains('Women')
     }
     searchProduct(){
-       return cy.get(search,timeout).type(short)
+       return cy.get(search)
     }
     submit(){
-       return cy.get(submit).click()
+       return cy.get(submit)
     }
     productContainer(){
        return cy.get(productContainer).contains(short)

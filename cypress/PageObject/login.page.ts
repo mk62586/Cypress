@@ -5,14 +5,14 @@ const password  = '#passwd'
 const submit   = '#SubmitLogin'
 
 class MyStore {       
- email(value :any){
-   return cy.get(emailId).type(value)
+ email(){
+   return cy.get(emailId)
  }
-   password( value1:any){
-    return cy.get(password).type(value1)
+   password(){
+    return cy.get(password)
  }
    submit(){
-  return  cy.get(submit).click()
+  return  cy.get(submit)
  }
  login1(){
     return cy.get("ol>li").contains("An email address required.")
